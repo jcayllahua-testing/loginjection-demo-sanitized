@@ -22,7 +22,8 @@ jobs:
         with:
           languages: java-kotlin
           build-mode: none
-          queries: security-extended
+          config-file: remote=jcayllahua-testing/codeql-log-sanitizers@main:codeql-config.yml
+          external-repository-token: ${{ secrets.CODEQL_CONFIG_TOKEN }}
 
       - uses: github/codeql-action/analyze@v4
         with:
